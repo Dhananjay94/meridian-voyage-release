@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "PartyReviewEscalationApp",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "c50c51eb-30af-48ef-9210-eb1df750831e",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "PartyReviewEscalationApp",
+      "description": null
+    },
+    "locks": [],
+    "key": "13b84115-c281-44a6-8996-cb8f9f7ee01c"
+  }
+}

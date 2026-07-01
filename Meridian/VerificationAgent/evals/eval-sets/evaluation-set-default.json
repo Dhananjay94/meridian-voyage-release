@@ -1,0 +1,61 @@
+{
+  "fileName": "evaluation-set-default.json",
+  "id": "b15c68e1-26fe-4e9a-ab96-114302004c3e",
+  "name": "Default Evaluation Set",
+  "batchSize": 10,
+  "evaluatorRefs": [
+    "4d5ade4e-0787-4d5b-bfbe-a85af7914b1a"
+  ],
+  "evaluations": [
+    {
+      "id": "9b212edf-3f1f-4cdf-be72-2732fe4492f7",
+      "name": "Debug Run 6/29/2026, 9:47:54 AM",
+      "inputs": {
+        "documentPacket": "\"{\\\"bol\\\":{\\\"voyage_id\\\":\\\"VOY-2026-0417\\\",\\\"vessel_name\\\":\\\"MV Helios Star\\\",\\\"shipper_name\\\":\\\"Aegean Bulk Traders SA\\\",\\\"consignee_name\\\":\\\"Gulf Industrial Supplies LLC\\\",\\\"origin_port_code\\\":\\\"GRPIR\\\",\\\"destination_port_code\\\":\\\"AEJEA\\\",\\\"cargo_description\\\":\\\"Industrial machinery parts\\\",\\\"gross_weight_kg\\\":24500,\\\"declared_value_usd\\\":185000},\\\"certificateOfOrigin\\\":{\\\"voyage_id\\\":\\\"VOY-2026-0417\\\",\\\"vessel_name\\\":\\\"MV Helios Star\\\",\\\"shipper_name\\\":\\\"Aegean Bulk Traders SA\\\",\\\"origin_port_code\\\":\\\"GRPIR\\\",\\\"issuing_country\\\":\\\"Greece\\\"},\\\"insuranceCertificate\\\":{\\\"voyage_id\\\":\\\"VOY-2026-0417\\\",\\\"shipper_name\\\":\\\"Aegean Bulk Traders SA\\\",\\\"destination_port_code\\\":\\\"AEJEA\\\",\\\"declared_value_usd\\\":185000,\\\"policy_number\\\":\\\"INS-2026-77321\\\"},\\\"cargoManifest\\\":{\\\"voyage_id\\\":\\\"VOY-2026-0417\\\",\\\"vessel_name\\\":\\\"MV Helios Star\\\",\\\"consignee_name\\\":\\\"Gulf Industrial Supplies LLC\\\",\\\"origin_port_code\\\":\\\"GRPIR\\\",\\\"destination_port_code\\\":\\\"AEJEA\\\",\\\"cargo_description\\\":\\\"Industrial machinery parts\\\",\\\"gross_weight_kg\\\":24500},\\\"qualityCertificate\\\":{\\\"voyage_id\\\":\\\"VOY-2026-0417\\\",\\\"cargo_description\\\":\\\"Industrial machinery parts\\\",\\\"inspection_date\\\":\\\"2026-06-15\\\",\\\"qc_officer\\\":\\\"S. Papadopoulos\\\"}}"
+      },
+      "expectedOutput": {
+        "assumptionId": "ASM-DOC",
+        "checkType": "document_completeness",
+        "overallResult": "VALID",
+        "checkResults": [
+          {
+            "check": "field_consistency",
+            "result": "PASS"
+          },
+          {
+            "check": "container_weight_consistency",
+            "result": "PASS"
+          },
+          {
+            "check": "certificate_completeness",
+            "result": "PASS"
+          },
+          {
+            "check": "amendment_propagation",
+            "result": "PASS"
+          },
+          {
+            "check": "inspection_date_sanity",
+            "result": "PASS"
+          }
+        ],
+        "failureReasons": []
+      },
+      "expectedAgentBehavior": "",
+      "simulationInstructions": "",
+      "simulateInput": false,
+      "inputGenerationInstructions": "",
+      "simulateTools": false,
+      "evalSetId": "b15c68e1-26fe-4e9a-ab96-114302004c3e",
+      "createdAt": "2026-06-29T04:17:54.725Z",
+      "updatedAt": "2026-06-29T04:17:54.725Z",
+      "source": "firstSuccessfulRun"
+    }
+  ],
+  "modelSettings": [],
+  "createdAt": "2026-06-28T01:15:04.363Z",
+  "updatedAt": "2026-06-29T04:17:54.725Z",
+  "agentMemoryEnabled": false,
+  "agentMemorySettings": [],
+  "lineByLineEvaluation": false
+}

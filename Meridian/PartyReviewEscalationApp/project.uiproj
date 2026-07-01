@@ -1,0 +1,10 @@
+{
+  "ProjectType": "WebApp",
+  "WebAppSettings": {
+    "AppId": "IDc696a0b9e67a492c8eda7503faefbb7e",
+    "IsCoreProject": true
+  },
+  "Name": "PartyReviewEscalationApp",
+  "Description": null,
+  "MainFile": "Main.xaml"
+}

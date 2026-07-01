@@ -1,0 +1,26 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "/content/caseplan.json.bpmn#trigger_1",
+      "uniqueId": "c955afca-4024-49ad-8641-8d67c088cb37",
+      "type": "CaseManagement",
+      "input": {
+        "type": "object",
+        "properties": {
+          "ListType": {
+            "type": "string",
+            "title": "ListType"
+          }
+        },
+        "required": []
+      },
+      "output": {
+        "type": "object",
+        "properties": {}
+      },
+      "displayName": "VoyageRelease record created"
+    }
+  ]
+}

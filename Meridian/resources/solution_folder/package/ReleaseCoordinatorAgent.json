@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "ReleaseCoordinatorAgent",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "839b5b99-c73f-4c5e-9a8f-2efa2e776b18",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "ReleaseCoordinatorAgent",
+      "description": null
+    },
+    "locks": [],
+    "key": "92fdb7dc-1065-41b1-9b7d-424f81d205ea"
+  }
+}

@@ -1,0 +1,14 @@
+[project]
+name = "PartyValidationAgent"
+version = "0.0.2"
+description = "PartyValidationAgent"
+authors = [{ name = "dhananjay.mendgudli.sub@gmail.com" }]
+dependencies = [
+    "uipath-llamaindex[bedrock,vertex]>=0.5.11, <0.6.0",
+]
+requires-python = ">=3.11"
+
+[dependency-groups]
+dev = [
+    "uipath-dev>=0.0.74",
+]

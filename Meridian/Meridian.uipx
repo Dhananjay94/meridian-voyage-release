@@ -1,0 +1,48 @@
+{
+  "DocVersion": "1.0.0",
+  "StudioMinVersion": "2025.04.0",
+  "SolutionId": "990ba009-6046-4c17-c075-08ded2923459",
+  "Projects": [
+    {
+      "Type": "Agent",
+      "ProjectRelativePath": "VerificationAgent/project.uiproj",
+      "Id": "4a691019-5a36-4b8f-9513-615c1e57b1c7"
+    },
+    {
+      "Type": "WebApp",
+      "ProjectRelativePath": "PortReviewEscalationApp/project.uiproj",
+      "Id": "c80b1d03-2a16-41f0-9899-52e38745e7a1"
+    },
+    {
+      "Type": "Process",
+      "ProjectRelativePath": "DUExtraction/project.uiproj",
+      "Id": "0b845f9e-5aef-450f-8754-6103261bc2d0"
+    },
+    {
+      "Type": "Agent",
+      "ProjectRelativePath": "ReleaseCoordinatorAgent/project.uiproj",
+      "Id": "839b5b99-c73f-4c5e-9a8f-2efa2e776b18"
+    },
+    {
+      "Type": "Api",
+      "ProjectRelativePath": "PortLookupTool/project.uiproj",
+      "Id": "3a89a18f-15be-4965-94b0-bc9473b2b657"
+    },
+    {
+      "Type": "WebApp",
+      "ProjectRelativePath": "PartyReviewEscalationApp/project.uiproj",
+      "Id": "c50c51eb-30af-48ef-9210-eb1df750831e"
+    },
+    {
+      "Type": "CaseManagement",
+      "ProjectRelativePath": "VoyageRelease/project.uiproj",
+      "Id": "aa0b78e8-d0a5-4b76-b6be-388ba1d6563b"
+    },
+    {
+      "Type": "Agent",
+      "ProjectRelativePath": "PartyValidationAgent/project.uiproj",
+      "Id": "6c29ebdc-2431-4e73-b9b3-08520afeb018"
+    }
+  ],
+  "AutomationHubIdeaUrl": null
+}

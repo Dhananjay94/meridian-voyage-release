@@ -1,0 +1,139 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "agent",
+            "uniqueId": "9016cb4a-25b4-44d3-8ace-08c3fea5316e",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "shipper": {
+                        "description": "Name of the shipping party",
+                        "title": "Shipper",
+                        "type": "string"
+                    },
+                    "consignee": {
+                        "description": "Name of the receiving party",
+                        "title": "Consignee",
+                        "type": "string"
+                    },
+                    "vessel_operator": {
+                        "description": "Name of the vessel operator",
+                        "title": "Vessel Operator",
+                        "type": "string"
+                    },
+                    "list_type": {
+                        "description": "Optional. Use 'escalation' to switch to denied_party_list_escalation.csv. Leave blank to use the default list.",
+                        "title": "List Type",
+                        "type": "string",
+                        "default": ""
+                    }
+                },
+                "required": [
+                    "shipper",
+                    "consignee",
+                    "vessel_operator"
+                ]
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "partyResult": {
+                        "description": "PASS | REVIEW | FAIL",
+                        "title": "Party Result",
+                        "type": "string"
+                    },
+                    "partyComment": {
+                        "description": "One human-readable sentence summarising the screening",
+                        "title": "Party Comment",
+                        "type": "string"
+                    },
+                    "partyScore": {
+                        "description": "Worst party score (0.0-1.0); 0.0 when CLEAR",
+                        "title": "Party Score",
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "partyResult",
+                    "partyComment",
+                    "partyScore"
+                ]
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "__start__",
+                        "name": "__start__",
+                        "type": "__start__",
+                        "subgraph": null
+                    },
+                    {
+                        "id": "postprocess",
+                        "name": "postprocess",
+                        "type": "node",
+                        "subgraph": null
+                    },
+                    {
+                        "id": "prepare",
+                        "name": "prepare",
+                        "type": "node",
+                        "subgraph": null
+                    },
+                    {
+                        "id": "react_agent",
+                        "name": "react_agent",
+                        "type": "node",
+                        "subgraph": null
+                    },
+                    {
+                        "id": "tool_executor",
+                        "name": "tool_executor",
+                        "type": "node",
+                        "subgraph": null
+                    },
+                    {
+                        "id": "__end__",
+                        "name": "__end__",
+                        "type": "__end__",
+                        "subgraph": null
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "postprocess",
+                        "target": "__end__",
+                        "label": "ResponseEvent"
+                    },
+                    {
+                        "source": "__start__",
+                        "target": "prepare",
+                        "label": "QueryEvent"
+                    },
+                    {
+                        "source": "prepare",
+                        "target": "react_agent",
+                        "label": "LLMInputEvent"
+                    },
+                    {
+                        "source": "react_agent",
+                        "target": "tool_executor",
+                        "label": "ToolCallEvent"
+                    },
+                    {
+                        "source": "react_agent",
+                        "target": "postprocess",
+                        "label": "AgentOutputEvent"
+                    },
+                    {
+                        "source": "tool_executor",
+                        "target": "react_agent",
+                        "label": "LLMInputEvent"
+                    }
+                ]
+            }
+        }
+    ]
+}

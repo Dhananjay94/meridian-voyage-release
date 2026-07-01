@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "DUExtraction",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "0b845f9e-5aef-450f-8754-6103261bc2d0",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "DUExtraction",
+      "description": null
+    },
+    "locks": [],
+    "key": "06c581fd-7067-4e3b-b009-38e3a94bae93"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "UiPath GenAI Activities",
+    "kind": "connection",
+    "type": "uipath-uipath-airdk",
+    "apiVersion": "integrationservice.uipath.com/v1",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "connectorName": "UiPath GenAI Activities",
+      "name": "UiPath GenAI Activities",
+      "description": null,
+      "authenticationType": "AuthenticateAfterDeployment",
+      "connectorVersion": "1.79.17",
+      "connectorKey": "uipath-uipath-airdk",
+      "pollingInterval": 5
+    },
+    "locks": [],
+    "key": "beaa1a35-fce3-4cde-97c0-0f1dba5b5e06"
+  }
+}

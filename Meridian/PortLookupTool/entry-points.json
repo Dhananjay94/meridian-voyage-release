@@ -1,0 +1,34 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "content/Workflow.json",
+      "uniqueId": "464593b5-2a08-4afe-b2e9-2f829c19c266",
+      "type": "Api",
+      "input": {
+        "type": "object",
+        "properties": {
+          "portCode": {
+            "type": "string",
+            "description": ""
+          }
+        },
+        "title": "Inputs"
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "portResult": {
+            "type": "string"
+          },
+          "portComment": {
+            "type": "string",
+            "description": ""
+          }
+        },
+        "title": "Outputs"
+      }
+    }
+  ]
+}

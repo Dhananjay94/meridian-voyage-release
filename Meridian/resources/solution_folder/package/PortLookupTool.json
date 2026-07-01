@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "PortLookupTool",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "3a89a18f-15be-4965-94b0-bc9473b2b657",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "PortLookupTool",
+      "description": null
+    },
+    "locks": [],
+    "key": "18dd93ce-9b0a-44a8-a831-9ccb4467ac52"
+  }
+}

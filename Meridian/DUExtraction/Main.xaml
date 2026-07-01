@@ -1,0 +1,600 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:de="clr-namespace:DataService.Entities;assembly=DataService.DataService.Entities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:srm="clr-namespace:System.Reflection.Metadata;assembly=System.Reflection.Metadata" xmlns:this="clr-namespace:" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C1DBA5B5E06_v2_sub_generateChatCompletion_Create.Bundle;assembly=C1DBA5B5E06_v2_sub_g.WfcD73fwBEG121RDA3VGdO62" xmlns:uisad="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction;assembly=UiPath.IntelligentOCR.StudioWeb.Activities" xmlns:uisasemb="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.MeridianDUBillOfLandingV2.Bundle;assembly=ExtendedExtractionRe.RV5xRRiKQP1SougyNL0P14" xmlns:uisasemb1="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.MeridianDUManifestV2.Bundle;assembly=ExtendedExtractionRe.exzsa39ILdN1vwHiQ1QpLXT3" xmlns:uisasemb2="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.MeridianDUCertificateOfOriginV2.Bundle;assembly=ExtendedExtractionRe.fndVJ28NNlA1dhpP322jnxX3" xmlns:uisasemb3="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.MeridianDUInsuranceV2.Bundle;assembly=ExtendedExtractionRe.GYXQJ2d2YVI1h854T1plfxk2" xmlns:uisasemb4="clr-namespace:UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.MeridianDUQualityCertificateV2.Bundle;assembly=ExtendedExtractionRe.ZJZKP2HBd7O1YYa1p3KMI2E1" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="caseId" Type="InArgument(x:String)" />
+    <x:Property Name="documentpacket" Type="OutArgument(x:String)" />
+  </x:Members>
+  <this:Main.caseId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.caseId>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="282">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>UiPath.Web.Activities.JSON.Models</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Web.Activities.JSON</x:String>
+      <x:String>UiPath.Sdk.Activities</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection</x:String>
+      <x:String>UiPath.Sdk.Activities.DependencyInjection.Contracts</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Reflection.Metadata</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>UiPath.DataService.Definition</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.DataExtraction</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.DocumentClassification</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts</x:String>
+      <x:String>UiPath.DocumentUnderstanding.Common.SDK.Discovery.Model</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>DataService.Entities</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.MeridianDUBillOfLandingV2.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.MeridianDUCertificateOfOriginV2.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.MeridianDUInsuranceV2.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.MeridianDUQualityCertificateV2.Bundle</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.SWEntities.ExtendedExtractionResultsForDocumentData.MeridianDUManifestV2.Bundle</x:String>
+      <x:String>Newtonsoft.Json.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Microsoft</x:String>
+      <x:String>Microsoft.Win32.SafeHandles</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Configuration.Assemblies</x:String>
+      <x:String>System.CodeDom.Compiler</x:String>
+      <x:String>System.Buffers</x:String>
+      <x:String>System.Buffers.Text</x:String>
+      <x:String>System.Buffers.Binary</x:String>
+      <x:String>System.Threading</x:String>
+      <x:String>System.Threading.Tasks</x:String>
+      <x:String>System.Threading.Tasks.Sources</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Text.Unicode</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Security.Principal</x:String>
+      <x:String>System.Security.Permissions</x:String>
+      <x:String>System.Security.Cryptography</x:String>
+      <x:String>System.Runtime</x:String>
+      <x:String>System.Runtime.Remoting</x:String>
+      <x:String>System.Runtime.ExceptionServices</x:String>
+      <x:String>System.Runtime.ConstrainedExecution</x:String>
+      <x:String>System.Runtime.Versioning</x:String>
+      <x:String>System.Runtime.Loader</x:String>
+      <x:String>System.Runtime.Intrinsics</x:String>
+      <x:String>System.Runtime.Intrinsics.Wasm</x:String>
+      <x:String>System.Runtime.Intrinsics.Arm</x:String>
+      <x:String>System.Runtime.Intrinsics.X86</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.InteropServices.ObjectiveC</x:String>
+      <x:String>System.Runtime.InteropServices.Marshalling</x:String>
+      <x:String>System.Runtime.InteropServices.ComTypes</x:String>
+      <x:String>System.Runtime.CompilerServices</x:String>
+      <x:String>System.Resources</x:String>
+      <x:String>System.Reflection.Emit</x:String>
+      <x:String>System.IO.Enumeration</x:String>
+      <x:String>System.Diagnostics.SymbolStore</x:String>
+      <x:String>System.Diagnostics.Contracts</x:String>
+      <x:String>System.Diagnostics.CodeAnalysis</x:String>
+      <x:String>System.Diagnostics.Tracing</x:String>
+      <x:String>System.Collections.Concurrent</x:String>
+      <x:String>Internal</x:String>
+      <x:String>System.CodeDom</x:String>
+      <x:String>Microsoft.CSharp</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Linq.Expressions.Interpreter</x:String>
+      <x:String>UiPath.Workflow.Runtime</x:String>
+      <x:String>System.Activities.Tracking</x:String>
+      <x:String>System.Activities.Statements.Tracking</x:String>
+      <x:String>System.Activities.Runtime</x:String>
+      <x:String>System.Activities.Runtime.DurableInstancing</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Activities.ParallelTracking</x:String>
+      <x:String>System.Activities.Hosting</x:String>
+      <x:String>System.Activities.Persistence</x:String>
+      <x:String>System.Activities.DurableInstancing</x:String>
+      <x:String>System.ComponentModel.Design.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Security.Authentication.ExtendedProtection</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Timers</x:String>
+      <x:String>System.ComponentModel.Design</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Schema</x:String>
+      <x:String>System.Xml.Xsl</x:String>
+      <x:String>System.Xml.Xsl.Runtime</x:String>
+      <x:String>System.Xml.XPath</x:String>
+      <x:String>System.Xml.Resolvers</x:String>
+      <x:String>Microsoft.CodeAnalysis</x:String>
+      <x:String>Microsoft.CodeAnalysis.FlowAnalysis</x:String>
+      <x:String>Microsoft.CodeAnalysis.Text</x:String>
+      <x:String>Microsoft.CodeAnalysis.Diagnostics</x:String>
+      <x:String>Microsoft.CodeAnalysis.Diagnostics.Telemetry</x:String>
+      <x:String>Microsoft.CodeAnalysis.Operations</x:String>
+      <x:String>Microsoft.CodeAnalysis.Emit</x:String>
+      <x:String>Microsoft.CodeAnalysis.VisualBasic</x:String>
+      <x:String>Microsoft.CodeAnalysis.VisualBasic.Syntax</x:String>
+      <x:String>Microsoft.VisualBasic.FileIO</x:String>
+      <x:String>System.Security.Authentication</x:String>
+      <x:String>System.Net.Cache</x:String>
+      <x:String>System.Net.NetworkInformation</x:String>
+      <x:String>System.Net.Security</x:String>
+      <x:String>System.Net.Sockets</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C1DBA5B5E06_v2_sub_generateChatCompletion_Create.Bundle</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="86">
+      <AssemblyReference>C1DBA5B5E06_v2_sub_g.WfcD73fwBEG121RDA3VGdO62</AssemblyReference>
+      <AssemblyReference>DataService.DataService.Entities</AssemblyReference>
+      <AssemblyReference>ExtendedExtractionRe.exzsa39ILdN1vwHiQ1QpLXT3</AssemblyReference>
+      <AssemblyReference>ExtendedExtractionRe.ZJZKP2HBd7O1YYa1p3KMI2E1</AssemblyReference>
+      <AssemblyReference>ExtendedExtractionRe.GYXQJ2d2YVI1h854T1plfxk2</AssemblyReference>
+      <AssemblyReference>ExtendedExtractionRe.fndVJ28NNlA1dhpP322jnxX3</AssemblyReference>
+      <AssemblyReference>ExtendedExtractionRe.RV5xRRiKQP1SougyNL0P14</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Runtime</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.ReaderWriter</AssemblyReference>
+      <AssemblyReference>System.Xml.XmlSerializer</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.Common.SDK</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Core</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Annotations</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Reflection.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="618.6,1004" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:CurrentJobInfo" Name="jobData">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ManualTrigger_1</x:String>
+            <x:String x:Key="SourcePropertyName">Result</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="upr:ILocalResource" Name="BOLFile">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">DownloadFileFromRecordField`1_1</x:String>
+            <x:String x:Key="SourcePropertyName">DownloadedFileResource</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="upr:ILocalResource" Name="ManifestFile" />
+      <Variable x:TypeArguments="upr:ILocalResource" Name="OriginFile" />
+      <Variable x:TypeArguments="upr:ILocalResource" Name="InsuranceFile" />
+      <Variable x:TypeArguments="upr:ILocalResource" Name="QualityCertificate" />
+      <Variable x:TypeArguments="x:String" Name="InsuranceJson" />
+      <Variable x:TypeArguments="srm:Document" Name="BolJson" />
+      <Variable x:TypeArguments="uisad:IDocumentData(uisasemb4:MeridianDUQualityCertificateV2)" Name="documentData">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ExtractDocumentDataWithDocumentData`1_6</x:String>
+            <x:String x:Key="SourcePropertyName">ExtractionResults</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="uisad:IDocumentData(uisasemb3:MeridianDUInsuranceV2)" Name="documentData_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ExtractDocumentDataWithDocumentData`1_5</x:String>
+            <x:String x:Key="SourcePropertyName">ExtractionResults</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="uisad:IDocumentData(uisasemb2:MeridianDUCertificateOfOriginV2)" Name="documentData_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ExtractDocumentDataWithDocumentData`1_4</x:String>
+            <x:String x:Key="SourcePropertyName">ExtractionResults</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="uisad:IDocumentData(uisasemb1:MeridianDUManifestV2)" Name="documentData_3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ExtractDocumentDataWithDocumentData`1_3</x:String>
+            <x:String x:Key="SourcePropertyName">ExtractionResults</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="uisad:IDocumentData(uisasemb:MeridianDUBillOfLandingV2)" Name="documentData_4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ExtractDocumentDataWithDocumentData`1_2</x:String>
+            <x:String x:Key="SourcePropertyName">ExtractionResults</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Name="ManifestJson" />
+      <Variable x:TypeArguments="scg:IList(de:MeridianCase)" Name="outputRecords" />
+      <Variable x:TypeArguments="njl:JObject" Default="[new Newtonsoft.Json.Linq.JObject From {  }]" Name="deserializedJson" />
+      <Variable x:TypeArguments="njl:JObject" Default="[new Newtonsoft.Json.Linq.JObject From {  }]" Name="simplifiedJson" />
+      <Variable x:TypeArguments="njl:JObject" Default="[new Newtonsoft.Json.Linq.JObject From {  }]" Name="simplifiedDocumentObject" />
+      <Variable x:TypeArguments="njl:JToken" Name="simplifiedDocumentObject_fieldProperty_Name_" />
+      <Variable x:TypeArguments="njl:JToken" Name="simplifiedJson_documentProperty_Name_" />
+      <Variable x:TypeArguments="x:String" Name="simplifiedJsonString" />
+      <Variable x:TypeArguments="x:String" Name="setValue" />
+      <Variable x:TypeArguments="x:String" Name="promptText" />
+      <Variable x:TypeArguments="x:String" Name="topGeneratedText">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">ConnectorActivity_1</x:String>
+            <x:String x:Key="SourcePropertyName">out_text</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ManualTrigger DisplayName="Manual Trigger" sap:VirtualizedContainerService.HintSize="480,68" sap2010:WorkflowViewState.IdRef="ManualTrigger_1" Result="[jobData]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ManualTrigger>
+    <uda:QueryEntityRecords x:TypeArguments="de:MeridianCase" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records" EntityId="c0ad3ff2-1d6e-f111-8fcb-000d3ab36606" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="480,48" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[outputRecords]" QueriedEntityId="c0ad3ff2-1d6e-f111-8fcb-000d3ab36606" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
+      <uda:QueryEntityRecords.FilterArguments>
+        <uda:FilterArgument FilterActivityType="{x:Null}">
+          <uda:FilterArgument.Filter>
+            <uda:GroupFilter Index="0" Operator="OR">
+              <uda:GroupFilter.Filters>
+                <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="4">
+                  <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="caseId" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="contains" ValueIndex="0" />
+                </scg:List>
+              </uda:GroupFilter.Filters>
+              <uda:GroupFilter.Groups>
+                <scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" />
+              </uda:GroupFilter.Groups>
+            </uda:GroupFilter>
+          </uda:FilterArgument.Filter>
+        </uda:FilterArgument>
+      </uda:QueryEntityRecords.FilterArguments>
+      <uda:QueryEntityRecords.FilterValues>
+        <scg:List x:TypeArguments="InArgument" Capacity="4">
+          <InArgument x:TypeArguments="x:String">[string.Format("{0}", caseId)]</InArgument>
+        </scg:List>
+      </uda:QueryEntityRecords.FilterValues>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uda:QueryEntityRecords>
+    <ui:ForEach x:TypeArguments="de:MeridianCase" CurrentIndex="{x:Null}" sap:WorkflowViewStateService.ViewState="{x:Null}" DisplayName="Process Meridian cases, download files, and extract Bill of Landing data" sap:VirtualizedContainerService.HintSize="480,648" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[outputRecords]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="de:MeridianCase">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="de:MeridianCase" Name="currentMeridianCase" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="480,576" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uda:DownloadFileFromRecordField x:TypeArguments="de:MeridianCase" FilePath="{x:Null}" ContinueOnError="False" DisplayName="Download a file from a Data Service record field." DownloadedFileResource="[BOLFile]" EntityId="c0ad3ff2-1d6e-f111-8fcb-000d3ab36606" Field="bolFile" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="DownloadFileFromRecordField`1_1" RecordId="[currentMeridianCase.Id]" TimeoutInMs="30000">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uda:DownloadFileFromRecordField>
+            <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasemb:MeridianDUBillOfLandingV2" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ActivityMajorVersion="2" ApplyAutoValidation="False" DisplayName="Extract data from a Bill of Landing document" DocType="fca2f822-8972-f111-ac9a-002248999c2d" ExtractionResults="[documentData_4]" ExtractorName="MeridianDU_Bill of Landing_v2" FileInput="[BOLFile]" GenerateData="True" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_2" ModernDocumentTypeId="fcf51e55-956c-f111-8fcb-0022489ccf5f" ModernDocumentTypeName="Bill of Landing" ProjectId="9ead0121-946c-f111-8fcb-0022489c00a7" ProjectName="MeridianDU" ProjectVersionName="MeridianDU" ProjectVersionNumber="2" TimeoutInSeconds="3600">
+              <p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
+                </InArgument>
+              </p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
+              <p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+              <p:ExtractDocumentDataWithDocumentData.ProjectTag>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </p:ExtractDocumentDataWithDocumentData.ProjectTag>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:ExtractDocumentDataWithDocumentData>
+            <uda:DownloadFileFromRecordField x:TypeArguments="de:MeridianCase" FilePath="{x:Null}" ContinueOnError="False" DisplayName="Download cargo manifest file from Data Service record." DownloadedFileResource="[ManifestFile]" EntityId="c0ad3ff2-1d6e-f111-8fcb-000d3ab36606" Field="cargoManifestFile" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="DownloadFileFromRecordField`1_2" RecordId="[currentMeridianCase.Id]" TimeoutInMs="30000">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uda:DownloadFileFromRecordField>
+            <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasemb1:MeridianDUManifestV2" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ActivityMajorVersion="2" ApplyAutoValidation="False" DisplayName="Extract data from a Cargo Manifest" DocType="fea2f822-8972-f111-ac9a-002248999c2d" ExtractionResults="[documentData_3]" ExtractorName="MeridianDU_Manifest_v2" FileInput="[ManifestFile]" GenerateData="True" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_3" ModernDocumentTypeId="3bfd4f44-376d-f111-8fcb-0022489ccf5f" ModernDocumentTypeName="Manifest" ProjectId="9ead0121-946c-f111-8fcb-0022489c00a7" ProjectName="MeridianDU" ProjectVersionName="MeridianDU" ProjectVersionNumber="2" TimeoutInSeconds="3600">
+              <p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
+                </InArgument>
+              </p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
+              <p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+              <p:ExtractDocumentDataWithDocumentData.ProjectTag>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </p:ExtractDocumentDataWithDocumentData.ProjectTag>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:ExtractDocumentDataWithDocumentData>
+            <uda:DownloadFileFromRecordField x:TypeArguments="de:MeridianCase" FilePath="{x:Null}" ContinueOnError="False" DisplayName="Download Certificate of Origin from Record Field" DownloadedFileResource="[OriginFile]" EntityId="c0ad3ff2-1d6e-f111-8fcb-000d3ab36606" Field="certificateOfOriginFile" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="DownloadFileFromRecordField`1_3" RecordId="[currentMeridianCase.Id]" TimeoutInMs="30000">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uda:DownloadFileFromRecordField>
+            <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasemb2:MeridianDUCertificateOfOriginV2" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ActivityMajorVersion="2" ApplyAutoValidation="False" DisplayName="Extract data from a Certificate of Origin" DocType="fda2f822-8972-f111-ac9a-002248999c2d" ExtractionResults="[documentData_2]" ExtractorName="MeridianDU_Certificate of origin_v2" FileInput="[OriginFile]" GenerateData="True" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_4" ModernDocumentTypeId="cb5d9409-ae6c-f111-8fcb-0022489ccf5f" ModernDocumentTypeName="Certificate of origin" ProjectId="9ead0121-946c-f111-8fcb-0022489c00a7" ProjectName="MeridianDU" ProjectVersionName="MeridianDU" ProjectVersionNumber="2" TimeoutInSeconds="3600">
+              <p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
+                </InArgument>
+              </p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
+              <p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+              <p:ExtractDocumentDataWithDocumentData.ProjectTag>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </p:ExtractDocumentDataWithDocumentData.ProjectTag>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:ExtractDocumentDataWithDocumentData>
+            <uda:DownloadFileFromRecordField x:TypeArguments="de:MeridianCase" FilePath="{x:Null}" ContinueOnError="False" DisplayName="Download File from Record Field" DownloadedFileResource="[InsuranceFile]" EntityId="c0ad3ff2-1d6e-f111-8fcb-000d3ab36606" Field="insuranceCertificateFile" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="DownloadFileFromRecordField`1_6" RecordId="[currentMeridianCase.Id]" TimeoutInMs="30000">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uda:DownloadFileFromRecordField>
+            <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasemb3:MeridianDUInsuranceV2" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ActivityMajorVersion="2" ApplyAutoValidation="False" DisplayName="Extract data from a Insurance Certificate" DocType="ffa2f822-8972-f111-ac9a-002248999c2d" ExtractionResults="[documentData_1]" ExtractorName="MeridianDU_Insurance_v2" FileInput="[InsuranceFile]" GenerateData="True" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_5" ModernDocumentTypeId="3fa230fe-a46c-f111-8fcb-0022489ccf5f" ModernDocumentTypeName="Insurance" ProjectId="9ead0121-946c-f111-8fcb-0022489c00a7" ProjectName="MeridianDU" ProjectVersionName="MeridianDU" ProjectVersionNumber="2" TimeoutInSeconds="3600">
+              <p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
+                </InArgument>
+              </p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
+              <p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+              <p:ExtractDocumentDataWithDocumentData.ProjectTag>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </p:ExtractDocumentDataWithDocumentData.ProjectTag>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:ExtractDocumentDataWithDocumentData>
+            <uda:DownloadFileFromRecordField x:TypeArguments="de:MeridianCase" FilePath="{x:Null}" ContinueOnError="False" DisplayName="Download Quality Certificate from Record Field" DownloadedFileResource="[QualityCertificate]" EntityId="c0ad3ff2-1d6e-f111-8fcb-000d3ab36606" Field="qualityCertificateFile" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="DownloadFileFromRecordField`1_7" RecordId="[currentMeridianCase.Id]" TimeoutInMs="30000">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uda:DownloadFileFromRecordField>
+            <p:ExtractDocumentDataWithDocumentData x:TypeArguments="uisasemb4:MeridianDUQualityCertificateV2" DocumentBounds="{x:Null}" DocumentObjectModel="{x:Null}" DocumentPath="{x:Null}" DocumentText="{x:Null}" ExtractorDocumentType="{x:Null}" ExtractorResult="{x:Null}" PersistenceId="{x:Null}" PredictionId="{x:Null}" RuntimeAssetPath="{x:Null}" RuntimeTenantUrl="{x:Null}" ActivityMajorVersion="2" ApplyAutoValidation="False" DisplayName="Extract data from a Quality Certificate" DocType="00a3f822-8972-f111-ac9a-002248999c2d" ExtractionResults="[documentData]" ExtractorName="MeridianDU_Quality Certificate_v2" FileInput="[QualityCertificate]" GenerateData="True" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="ExtractDocumentDataWithDocumentData`1_6" ModernDocumentTypeId="47fd4a2a-a36c-f111-8fcb-0022489ccf5f" ModernDocumentTypeName="Quality Certificate" ProjectId="9ead0121-946c-f111-8fcb-0022489c00a7" ProjectName="MeridianDU" ProjectVersionName="MeridianDU" ProjectVersionNumber="2" TimeoutInSeconds="3600">
+              <p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
+                <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+                  <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
+                </InArgument>
+              </p:ExtractDocumentDataWithDocumentData.AutoValidationConfidenceThreshold>
+              <p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </p:ExtractDocumentDataWithDocumentData.GptPromptWithVariables>
+              <p:ExtractDocumentDataWithDocumentData.ProjectTag>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </p:ExtractDocumentDataWithDocumentData.ProjectTag>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </p:ExtractDocumentDataWithDocumentData>
+            <Assign DisplayName="Assign" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[ManifestJson]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">[Newtonsoft.Json.JsonConvert.SerializeObject(
+    New With {
+        .QualityCertificate = documentData.Data,
+        .Insurance = documentData_1.Data,
+        .CertificateOfOrigin = documentData_2.Data,
+        .Manifest = documentData_3.Data,
+        .BillOfLanding = documentData_4.Data
+    },
+    Newtonsoft.Json.Formatting.Indented
+)]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <Sequence sap2010:Annotation.AnnotationText="gener" DisplayName="Sequence 1" sap:VirtualizedContainerService.HintSize="480,216" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <isactr:ConnectorActivity Configuration="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" ConnectionId="beaa1a35-fce3-4cde-97c0-0f1dba5b5e06" DisplayName="Generate a chat completion response using an integrated LLM based on the provided prompt." sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="ConnectorActivity_1" UiPathActivityTypeId="aba52a00-4c05-318d-8f99-5ad924b2f277">
+        <isactr:ConnectorActivity.FieldObjects>
+          <isactr:FieldObject Name="prompt" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <InArgument x:TypeArguments="x:String">[ManifestJson]</InArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="isPIIEnabled" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="isFilterPIIEnabled" Type="FieldArgument" />
+          <isactr:FieldObject Name="languageCode" Type="FieldArgument" />
+          <isactr:FieldObject Name="piiEntityCategories_array" Type="FieldArgument" />
+          <isactr:FieldObject Name="confidenceThreshold" Type="FieldArgument" />
+          <isactr:FieldObject Name="topK" Type="FieldArgument" />
+          <isactr:FieldObject Name="contextGrounding" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <InArgument x:TypeArguments="x:String">None</InArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="_file" Type="FieldArgument" />
+          <isactr:FieldObject Name="folderKey" Type="FieldArgument" />
+          <isactr:FieldObject Name="topP" Type="FieldArgument" />
+          <isactr:FieldObject Name="indexID" Type="FieldArgument" />
+          <isactr:FieldObject Name="max_tokens" Type="FieldArgument" />
+          <isactr:FieldObject Name="temperature" Type="FieldArgument" />
+          <isactr:FieldObject Name="frequency_penalty" Type="FieldArgument" />
+          <isactr:FieldObject Name="numberOfResults" Type="FieldArgument" />
+          <isactr:FieldObject Name="presence_penalty" Type="FieldArgument" />
+          <isactr:FieldObject Name="n" Type="FieldArgument" />
+          <isactr:FieldObject Name="top_p" Type="FieldArgument" />
+          <isactr:FieldObject Name="_stop" Type="FieldArgument" />
+          <isactr:FieldObject Name="modelName" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <InArgument x:TypeArguments="x:String">gpt-5.1-2025-11-13</InArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="instruction" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <InArgument x:TypeArguments="x:String">[string.Format("You are given a JSON extracted from Document Understanding/OCR.{0}The JSON structure is like this:{1}{{{2}  ""DocumentName"": {{{3}    ""FieldName"": {{{4}      ""Value"": ""actual value"",{5}      ""Confidence"": 0.99,{6}      ""OcrConfidence"": 0.98{7}    }}{8}  }}{9}}}{10}Convert it into a simplified JSON with this structure:{11}{{{12}  ""DocumentName"": {{{13}    ""FieldName"": ""actual value""{14}  }}{15}}}{16}Rules:{17}1. Keep the original document/file names exactly as they appear.{18}   Example:{19}   - QualityCertificate should remain QualityCertificate{20}   - Insurance should remain Insurance{21}   - CertificateOfOrigin should remain CertificateOfOrigin{22}   - Manifest should remain Manifest{23}   - BillOfLanding should remain BillOfLanding{24}2. Keep the original field names exactly as they appear.{25}   Example:{26}   - CargoDescription should remain CargoDescription{27}   - InspectionResult should remain InspectionResult{28}   - RelatedVoyageId should remain RelatedVoyageId{29}3. For every field, take only the value inside the ""Value"" property.{30}4. Remove ""Confidence"" and ""OcrConfidence"" completely.{31}5. Do not rename document names.{32}6. Do not rename field names.{33}7. Do not convert field names to snake_case.{34}8. Do not invent any fields or values.{35}9. If the Value is an empty string """", keep it as an empty string unless instructed otherwise.{36}10. Preserve data types:{37}   - Numbers should remain numbers{38}   - Strings should remain strings{39}   - Dates should remain strings{40}11. Return only valid JSON.{41}12. Do not include explanations, markdown, comments, or extra text.{42}Input JSON:{43}", Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine, Environment.NewLine)]</InArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="out_text" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <OutArgument x:TypeArguments="x:String">[topGeneratedText]</OutArgument>
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="out_maskedText" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <OutArgument x:TypeArguments="x:String" />
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="Jit_v2_sub_generateChatCompletion" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <OutArgument x:TypeArguments="uiascb:v2_sub_generateChatCompletion_Create" />
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+          <isactr:FieldObject Name="out_contextGroundingCitationsString" Type="FieldArgument">
+            <isactr:FieldObject.Value>
+              <OutArgument x:TypeArguments="x:String" />
+            </isactr:FieldObject.Value>
+          </isactr:FieldObject>
+        </isactr:ConnectorActivity.FieldObjects>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </isactr:ConnectorActivity>
+      <ui:LogMessage DisplayName="Log the generated answer from the LLM." sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[topGeneratedText]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
+      <Assign DisplayName="Assign 1" sap:VirtualizedContainerService.HintSize="449.6,48" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[documentpacket]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[topGeneratedText]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+    </Sequence>
+  </Sequence>
+</Activity>

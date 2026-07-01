@@ -1,0 +1,45 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "PortReviewEscalationApp",
+    "kind": "app",
+    "type": "workflow Action",
+    "apiVersion": "apps.uipath.com/v1",
+    "projectKey": "c80b1d03-2a16-41f0-9899-52e38745e7a1",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "PortReviewEscalationApp",
+        "kind": "appVersion"
+      },
+      {
+        "name": "PortReviewEscalationApp",
+        "kind": "process"
+      }
+    ],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "PortReviewEscalationApp",
+      "description": null,
+      "type": "workflow Action",
+      "version": null,
+      "appSystemName": null,
+      "appVersionRef": {
+        "key": "31c5ade4-5098-4b1f-9510-3a0dd96434ea"
+      },
+      "codeBehindProcess": {
+        "key": "1d498a34-4711-491d-8f19-16d590812f20"
+      },
+      "actionSchema": null,
+      "manualActivationActions": null
+    },
+    "locks": [],
+    "key": "c4977527-f2be-4454-b1ae-1d06f21b1bf1"
+  }
+}

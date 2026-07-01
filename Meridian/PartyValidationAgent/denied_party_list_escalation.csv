@@ -1,0 +1,10 @@
+party_name,list_version,reason
+Sanctioned Trading Corp,2026.06.18,OFAC SDN list
+Blacklisted Shipping LLC,2026.06.18,EU consolidated sanctions
+Restricted Cargo FZE,2026.06.18,UN Security Council
+Volga Petrochemicals OAO,2026.06.18,Sectoral sanctions
+Crimea Shipping Agency,2026.06.18,Territorial restriction
+Pyongyang Trade Bureau,2026.06.18,UN Security Council
+Caspian Cargo Holdings,2026.06.18,Watchlist - under review
+Aegean Bulk Trade Group,2026.06.18,Watchlist - name similar to shipper (POSSIBLE_MATCH demo)
+Petrochem Trading,2026.06.18,Denied party - export control (CONFIRMED_MATCH demo)

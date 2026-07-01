@@ -1,0 +1,179 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/registry-resolved",
+  "version": "1.0",
+  "generated_at": "2026-06-30T14:30:00Z",
+  "case_name": "VoyageRelease",
+  "resources": {
+    "VerificationAgent": {
+      "resource_type": "agent",
+      "name": "VerificationAgent",
+      "entity_key": "965ac3e9-96b8-4d6c-a777-c6ec630618a3",
+      "folder_key": "7c909ff8-2863-4066-8cbb-2d6dfeefbdbf",
+      "folder_fully_qualified_name": "dhananjay.mendgudli.sub@gmail.com's workspace/Debug_Meridian",
+      "process_key": "Meridian.agent.VerificationAgent",
+      "process_version": "1.0.0-debug.63918209397",
+      "auto_confirmed": true,
+      "provenance": "tenant-registry:VerificationAgent",
+      "used_by_tasks": ["Stage 2.1: Run VerificationAgent"],
+      "declared_inputs": [{ "name": "documentPacket", "type": "string", "required": true }],
+      "declared_outputs": ["docResult", "docComment", "docConfidence", "flaggedDocument"],
+      "review_items": []
+    },
+    "PartyValidationAgent": {
+      "resource_type": "agent",
+      "name": "PartyValidationAgent",
+      "entity_key": "de933600-26f3-45fb-8274-e75865599c4d",
+      "folder_key": "7c909ff8-2863-4066-8cbb-2d6dfeefbdbf",
+      "folder_fully_qualified_name": "dhananjay.mendgudli.sub@gmail.com's workspace/Debug_Meridian",
+      "process_key": "Meridian.agent.PartyValidationAgent",
+      "process_version": "1.0.0-debug.63918209397",
+      "auto_confirmed": true,
+      "provenance": "tenant-registry:PartyValidationAgent",
+      "used_by_tasks": ["Stage 3.1: Run PartyValidationAgent"],
+      "declared_inputs": [
+        { "name": "shipper", "type": "string", "required": true },
+        { "name": "consignee", "type": "string", "required": true },
+        { "name": "vessel_operator", "type": "string", "required": true },
+        { "name": "list_type", "type": "string", "required": false }
+      ],
+      "declared_outputs": ["partyResult", "partyComment", "partyScore"],
+      "review_items": []
+    },
+    "ReleaseCoordinatorAgent": {
+      "resource_type": "agent",
+      "name": "ReleaseCoordinatorAgent",
+      "entity_key": "05a27308-2df8-49b0-89ce-cb2e15fbc20f",
+      "folder_key": "7c909ff8-2863-4066-8cbb-2d6dfeefbdbf",
+      "folder_fully_qualified_name": "dhananjay.mendgudli.sub@gmail.com's workspace/Debug_Meridian",
+      "process_key": "Meridian.agent.ReleaseCoordinatorAgent",
+      "process_version": "1.0.0-debug.63918209397",
+      "auto_confirmed": true,
+      "provenance": "tenant-registry:ReleaseCoordinatorAgent",
+      "used_by_tasks": ["Stage 5.1: Write closure summary", "Stage R.1: Write rejection summary"],
+      "declared_inputs": [
+        { "name": "caseId", "type": "string", "required": true },
+        { "name": "docComment", "type": "string", "required": false },
+        { "name": "partyComment", "type": "string", "required": false },
+        { "name": "portComment", "type": "string", "required": false },
+        { "name": "reviewComment", "type": "string", "required": false },
+        { "name": "approvedOverride", "type": "boolean", "required": false },
+        { "name": "outcomeContext", "type": "string", "required": false }
+      ],
+      "declared_outputs": ["closureSummary"],
+      "review_items": [
+        {
+          "id": "rev_phase1_describe_releasecoordinator",
+          "severity": "medium",
+          "issue": "Declared inputs above are inferred from the SDD's intended use; Phase 1 must run `uip maestro case tasks describe --type agent --id 05a27308-... --output json` and re-verify the contract."
+        }
+      ]
+    },
+    "DUExtraction": {
+      "resource_type": "rpa",
+      "name": "DUExtraction",
+      "entity_key": "<UNRESOLVED>",
+      "folder_fully_qualified_name": "<UNRESOLVED>",
+      "provenance": "solution-project:DUExtraction",
+      "note": "Project exists at /solution/DUExtraction/ in this solution. Bound via solution-project pattern (name + folder via bindings). Identity resolves at solution pack/deploy time.",
+      "used_by_tasks": ["Stage 1.2: Run DUExtraction"],
+      "declared_inputs": [{ "name": "caseId", "type": "string", "required": true }],
+      "declared_outputs": ["documentpacket"],
+      "review_items": [
+        {
+          "id": "rev_unresolved_du_extraction",
+          "severity": "high",
+          "issue": "DUExtraction not yet deployed/published. Phase 2 will bind via solution-project name+folder; runtime requires the RPA package to be deployed."
+        }
+      ]
+    },
+    "PortLookupTool": {
+      "resource_type": "api-workflow",
+      "name": "PortLookupTool",
+      "entity_key": "<UNRESOLVED>",
+      "folder_fully_qualified_name": "<UNRESOLVED>",
+      "provenance": "solution-project:PortLookupTool",
+      "note": "Project exists at /solution/PortLookupTool/ in this solution. Bound via solution-project pattern at deploy time.",
+      "used_by_tasks": ["Stage 4.1: Run PortLookupTool"],
+      "declared_inputs": [{ "name": "destinationPortCode", "type": "string", "required": true }],
+      "declared_outputs": ["portResult", "portComment"],
+      "review_items": [
+        {
+          "id": "rev_unresolved_port_lookup",
+          "severity": "high",
+          "issue": "PortLookupTool not yet deployed. Phase 2 will bind via solution-project name+folder; runtime requires the API workflow to be deployed."
+        }
+      ]
+    },
+    "PartyReviewApp": {
+      "resource_type": "action-app",
+      "name": "PartyReviewApp",
+      "action_app_id": "<UNRESOLVED>",
+      "deployment_folder": "<UNRESOLVED>",
+      "provenance": "placeholder",
+      "used_by_tasks": ["Party Review PR.1: Party reviewer decision"],
+      "review_items": [
+        {
+          "id": "rev_action_app_party_review",
+          "severity": "high",
+          "issue": "PartyReviewApp is not deployed as an Action App in the tenant. On APPROVE, the app must set `partyOverride = true` (gates Party Validation's completion re-evaluation) AND `approvedOverride = true` (read by ReleaseCoordinatorAgent at Released). On REJECT, no override flag is set \u2014 case routes directly to Rejected via exit-only."
+        }
+      ]
+    },
+    "PortReviewApp": {
+      "resource_type": "action-app",
+      "name": "PortReviewApp",
+      "action_app_id": "<UNRESOLVED>",
+      "deployment_folder": "<UNRESOLVED>",
+      "provenance": "placeholder",
+      "used_by_tasks": ["Port Review PoR.1: Port reviewer decision"],
+      "review_items": [
+        {
+          "id": "rev_action_app_port_review",
+          "severity": "high",
+          "issue": "PortReviewApp is not deployed as an Action App in the tenant. On APPROVE, the app must set `portOverride = true` (gates Port Readiness's completion re-evaluation) AND `approvedOverride = true`. On REJECT, no override flag \u2014 case routes directly to Rejected via exit-only."
+        }
+      ]
+    },
+    "DocumentReviewApp": {
+      "resource_type": "action-app",
+      "name": "DocumentReviewApp",
+      "action_app_id": "<UNRESOLVED>",
+      "deployment_folder": "<UNRESOLVED>",
+      "provenance": "placeholder",
+      "used_by_tasks": ["Document Review DR.1: Document reviewer decision"],
+      "review_items": [
+        {
+          "id": "rev_action_app_document_review",
+          "severity": "high",
+          "issue": "DocumentReviewApp is not deployed as an Action App in the tenant. App must expose five `file` output fields (bolDocument, cargoManifestDocument, certificateOfOriginDocument, insuranceCertificateDocument, qualityCertificateDocument) and route the reviewer's re-uploaded file into whichever one matches `flaggedDocument` (set by VerificationAgent); the other four emit null. On APPROVE, the app must additionally set `approvedOverride = true` (no per-lane flag \u2014 Doc Review forward-routes to Document Intake; gates are not bypassed). On REJECT, no override flag \u2014 case routes directly to Rejected via exit-only."
+        }
+      ]
+    }
+  },
+  "trigger_T02": {
+    "resource_type": "event-trigger",
+    "name": "Voyage record created",
+    "connector_key": "uipath-uipath-dataservice",
+    "connection_id": "340a34eb-b132-42ae-9efc-95c151a40b54",
+    "folder_key": "19901aa0-a2af-4d48-851e-de9ae597df07",
+    "activity_type_id": "af2a53ad-5d90-3d4e-bf3c-55b6d91595cd",
+    "object_name": "MeridianCase",
+    "operation": "CREATED",
+    "service_type": "Intsvc.EventTrigger",
+    "provenance": "user-stated:reuse MeridianCase entity",
+    "review_items": [
+      {
+        "id": "rev_shared_entity",
+        "severity": "medium",
+        "issue": "Both MeridianCase and VoyageRelease cases will fire on the same MeridianCase entity record creation. Each new record will spawn one case of each kind. Confirm intended; if not, author a dedicated VoyageRelease entity in Data Fabric and re-point the trigger."
+      }
+    ]
+  },
+  "review_items_summary": {
+    "high": 5,
+    "medium": 2,
+    "low": 0,
+    "total": 7
+  },
+  "auto_confirmed_count": 3
+}

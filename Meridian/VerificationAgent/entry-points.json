@@ -1,0 +1,52 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "/content/agent.json",
+      "uniqueId": "8100ef5b-dd3b-4356-92f4-69c65ce56247",
+      "type": "agent",
+      "input": {
+        "type": "object",
+        "properties": {
+          "documentPacket": {
+            "type": "string",
+            "description": "JSON string with five sub-objects: bol, certificateOfOrigin, insuranceCertificate, cargoManifest, qualityCertificate. Each holds extracted fields in snake_case: voyage_id, vessel_name, shipper_name, consignee_name, origin_port_code, destination_port_code, cargo_description, gross_weight_kg, declared_value_usd, plus notify_party, issuing_country, policy_number, inspection_date, qc_officer where applicable."
+          }
+        },
+        "title": "Inputs",
+        "required": [
+          "documentPacket"
+        ]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "docResult": {
+            "type": "string",
+            "description": "PASS if all five consistency checks pass. REVIEW if exactly one document is missing/unreadable/malformed such that re-uploading it could fix the case. FAIL if documents hard-contradict each other or documentPacket is invalid JSON."
+          },
+          "docComment": {
+            "type": "string",
+            "description": "Concise sentence (no more than 20 words) explicitly naming the involved document(s) and the failure cause (or success on PASS)."
+          },
+          "docConfidence": {
+            "type": "number",
+            "description": "Integer 0-100 indicating confidence in docResult."
+          },
+          "flaggedDocument": {
+            "type": "string",
+            "description": "The document key most directly responsible for the result. On REVIEW: the document to re-upload. On FAIL: the document carrying the conflicting/invalid value (treat BoL as canonical; manifest for weight delta; quality for date issues; the doc with the stale value for amendment failures). On PASS or invalid-JSON FAIL: empty string. Values: bol, manifest, coo, insurance, or quality."
+          }
+        },
+        "title": "Outputs",
+        "required": [
+          "docResult",
+          "docComment",
+          "docConfidence",
+          "flaggedDocument"
+        ]
+      }
+    }
+  ]
+}

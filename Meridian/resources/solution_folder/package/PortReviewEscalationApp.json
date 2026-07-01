@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "PortReviewEscalationApp",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "c80b1d03-2a16-41f0-9899-52e38745e7a1",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "PortReviewEscalationApp",
+      "description": null
+    },
+    "locks": [],
+    "key": "85f72e41-6251-44aa-9620-6de4e8e17180"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "PartyValidationAgent",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "6c29ebdc-2431-4e73-b9b3-08520afeb018",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "fileName": null,
+      "fileReference": null,
+      "name": "PartyValidationAgent",
+      "description": null
+    },
+    "locks": [],
+    "key": "40e3d1e1-34b7-4f75-911c-20892445aa60"
+  }
+}

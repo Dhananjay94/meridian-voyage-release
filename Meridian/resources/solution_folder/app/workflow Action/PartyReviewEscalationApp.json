@@ -1,0 +1,45 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "PartyReviewEscalationApp",
+    "kind": "app",
+    "type": "workflow Action",
+    "apiVersion": "apps.uipath.com/v1",
+    "projectKey": "c50c51eb-30af-48ef-9210-eb1df750831e",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "PartyReviewEscalationApp",
+        "kind": "appVersion"
+      },
+      {
+        "name": "PartyReviewEscalationApp",
+        "kind": "process"
+      }
+    ],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "PartyReviewEscalationApp",
+      "description": null,
+      "type": "workflow Action",
+      "version": null,
+      "appSystemName": null,
+      "appVersionRef": {
+        "key": "7e63bd33-6a72-4969-b466-54177a63eb3d"
+      },
+      "codeBehindProcess": {
+        "key": "bbaef277-3c21-47ae-895b-e90cd6de0715"
+      },
+      "actionSchema": null,
+      "manualActivationActions": null
+    },
+    "locks": [],
+    "key": "a2f964f6-07c4-419e-a7b8-30282e10a4c3"
+  }
+}

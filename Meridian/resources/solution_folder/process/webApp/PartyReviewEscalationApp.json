@@ -1,0 +1,63 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "PartyReviewEscalationApp",
+    "kind": "process",
+    "type": "webApp",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "c50c51eb-30af-48ef-9210-eb1df750831e",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "PartyReviewEscalationApp",
+        "kind": "package"
+      }
+    ],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "entryPointUniqueId": null,
+      "inputArgumentsSchema": null,
+      "outputArgumentsSchema": null,
+      "inputArgumentsSchemaV2": null,
+      "outputArgumentsSchemaV2": null,
+      "type": "WebApp",
+      "name": "PartyReviewEscalationApp",
+      "description": null,
+      "package": {
+        "key": "13b84115-c281-44a6-8996-cb8f9f7ee01c"
+      },
+      "packageName": "Meridian.webApp.PartyReviewEscalationApp",
+      "packageVersion": null,
+      "entryPointName": null,
+      "inputArguments": null,
+      "jobPriority": "Medium",
+      "hiddenForAttendedUser": true,
+      "alwaysRunning": true,
+      "autoStartProcess": false,
+      "jobRecording": "Disabled",
+      "targetFrameworkValue": "Portable",
+      "duration": 40,
+      "frequency": 500,
+      "quality": 100,
+      "remoteControlAccess": "None",
+      "robotSize": "Automatic",
+      "retentionAction": "Delete",
+      "retentionPeriod": 30,
+      "retentionBucketRef": null,
+      "staleRetentionAction": "Delete",
+      "staleRetentionPeriod": 180,
+      "staleRetentionBucketRef": null,
+      "entryPoints": null,
+      "connections": null,
+      "tags": []
+    },
+    "locks": [],
+    "key": "bbaef277-3c21-47ae-895b-e90cd6de0715"
+  }
+}

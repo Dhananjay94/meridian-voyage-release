@@ -1,0 +1,10 @@
+{
+  "ProjectType": "WebApp",
+  "WebAppSettings": {
+    "AppId": "ID0bbebf5c829c4ff5a49afc396c261967",
+    "IsCoreProject": true
+  },
+  "Name": "PortReviewEscalationApp",
+  "Description": "",
+  "MainFile": "Main.xaml"
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "/content/agent.json",
+      "uniqueId": "1246d0ac-e3cf-4426-978b-6dea3043ee18",
+      "type": "agent",
+      "input": {
+        "type": "object",
+        "properties": {
+          "releaseOutcome": {
+            "type": "string",
+            "description": "The final release decision, already determined upstream. One of: RELEASED, RELEASED_WITH_OVERRIDE, REJECTED."
+          },
+          "docResult": {
+            "type": "string",
+            "description": "Document verification verdict: PASS, FAIL, or REVIEW."
+          },
+          "docComment": {
+            "type": "string",
+            "description": "One-sentence summary of the document verification result."
+          },
+          "partyResult": {
+            "type": "string",
+            "description": "Party screening verdict: PASS, FAIL, or REVIEW."
+          },
+          "partyComment": {
+            "type": "string",
+            "description": "One-sentence summary of the party screening result."
+          },
+          "portResult": {
+            "type": "string",
+            "description": "Port readiness verdict: PASS, FAIL, or REVIEW."
+          },
+          "portComment": {
+            "type": "string",
+            "description": "One-sentence summary of the port readiness check."
+          },
+          "reviewDecision": {
+            "type": "string",
+            "description": "Human review decision if a check was escalated, e.g. APPROVE or REJECT. Empty string if no human review occurred."
+          },
+          "reviewComment": {
+            "type": "string",
+            "description": "Human reviewer's note explaining the review decision. Empty string if no human review occurred."
+          }
+        },
+        "title": "Inputs",
+        "required": [
+          "releaseOutcome",
+          "docResult",
+          "docComment",
+          "partyResult",
+          "partyComment",
+          "portResult",
+          "portComment"
+        ]
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "closureSummary": {
+            "type": "string",
+            "description": "Human-readable prose closure summary for a Release Manager. One clean professional paragraph (4-6 sentences). Leads with the outcome in capitals (RELEASED, RELEASED WITH OVERRIDE, REJECTED). No bullet points, no headers, no JSON."
+          }
+        },
+        "title": "Outputs",
+        "required": [
+          "closureSummary"
+        ]
+      }
+    }
+  ]
+}

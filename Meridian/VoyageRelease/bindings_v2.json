@@ -1,0 +1,178 @@
+{
+  "version": "2.0",
+  "resources": [
+    {
+      "resource": "EventTrigger",
+      "key": "340a34eb-b132-42ae-9efc-95c151a40b54_trigger_1",
+      "id": "EventTrigger340a34eb-b132-42ae-9efc-95c151a40b54_trigger_1",
+      "value": {
+        "ConnectionId": {
+          "defaultValue": "340a34eb-b132-42ae-9efc-95c151a40b54",
+          "isExpression": false
+        },
+        "EntryPointUniqueId": {
+          "defaultValue": "c955afca-4024-49ad-8641-8d67c088cb37",
+          "isExpression": false
+        }
+      },
+      "metadata": {
+        "UseConnectionService": "true",
+        "Connector": "uipath-uipath-dataservice",
+        "ActivityName": "VoyageRelease record created",
+        "BindingsVersion": "2.2",
+        "ObjectName": "MeridianCase",
+        "Operation": "CREATED",
+        "FilterExpression": ""
+      }
+    },
+    {
+      "resource": "process",
+      "key": "DUExtraction",
+      "id": "processDUExtraction",
+      "value": {
+        "name": {
+          "defaultValue": "DUExtraction",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "DUExtraction",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "VerificationAgent",
+      "id": "processVerificationAgent",
+      "value": {
+        "name": {
+          "defaultValue": "VerificationAgent",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "VerificationAgent",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true",
+        "subType": "Agent"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "PartyValidationAgent",
+      "id": "processPartyValidationAgent",
+      "value": {
+        "name": {
+          "defaultValue": "PartyValidationAgent",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "PartyValidationAgent",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true",
+        "subType": "Agent"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "PortLookupTool",
+      "id": "processPortLookupTool",
+      "value": {
+        "name": {
+          "defaultValue": "PortLookupTool",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "PortLookupTool",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true",
+        "subType": "Api"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "ReleaseCoordinatorAgent",
+      "id": "processReleaseCoordinatorAgent",
+      "value": {
+        "name": {
+          "defaultValue": "ReleaseCoordinatorAgent",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "ReleaseCoordinatorAgent",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true",
+        "subType": "Agent"
+      }
+    },
+    {
+      "resource": "Connection",
+      "key": "340a34eb-b132-42ae-9efc-95c151a40b54",
+      "id": "Connection340a34eb-b132-42ae-9efc-95c151a40b54",
+      "value": {
+        "ConnectionId": {
+          "defaultValue": "340a34eb-b132-42ae-9efc-95c151a40b54",
+          "isExpression": false,
+          "displayName": "uipath-uipath-dataservice connection"
+        }
+      },
+      "metadata": {
+        "ActivityName": "VoyageRelease record created",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "uipath-uipath-dataservice connection",
+        "UseConnectionService": "true",
+        "Connector": "uipath-uipath-dataservice"
+      }
+    },
+    {
+      "resource": "app",
+      "key": "PortReviewPartyReviewEscalationApp",
+      "id": "appPortReviewPartyReviewEscalationApp",
+      "value": {
+        "name": {
+          "defaultValue": "PortReviewEscalationApp",
+          "isExpression": false,
+          "displayName": "App name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "EscalationApp1",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    },
+    {
+      "resource": "app",
+      "key": "PartyReviewEscalationApp",
+      "id": "appPartyReviewEscalationApp",
+      "value": {
+        "name": {
+          "defaultValue": "PartyReviewEscalationApp",
+          "isExpression": false,
+          "displayName": "App name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "EscalationApp",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true"
+      }
+    }
+  ]
+}
